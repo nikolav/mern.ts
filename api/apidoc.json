@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "title": "RestAPI Starter",
+  "name": "RestAPI Starter",
+  "description": "Blank restapi boilerpalte",
+  "url" : "http://45.76.85.164:8081/",
+  "github" : "https://github.com/nikolav/react-express--starter/tree/main/restapi--express"
+}

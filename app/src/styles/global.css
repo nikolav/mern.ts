@@ -1,0 +1,84 @@
+.typography-adjust {
+  font-family: "Open Sans", "Roboto", "Segoe UI", "Candara", "DejaVu Sans",
+    "Bitstream Vera Sans", "Trebuchet MS", "Verdana", "Verdana Ref", sans-serif !important;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+.typography-antialiased {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.typography-spacing-relaxed {
+  letter-spacing: 0.028rem;
+  word-spacing: 0.032rem;
+}
+
+/*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Vendor-prefixed and regular ::selection selectors cannot be combined:
+   * https://stackoverflow.com/a/16982510/7133471
+   *
+   * Customize the background color to match your design.
+   */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track,
+.scrollbar-thin--dark::-webkit-scrollbar-track,
+.scrollbar-none::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar,
+.scrollbar-thin--dark::-webkit-scrollbar {
+  width: 0.2rem;
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: steelblue;
+}
+
+.dark .scrollbar-thin--dark::-webkit-scrollbar-thumb {
+  background-color: white !important;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.scrollbar-none::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@keyframes placeholder-glow {
+  from {
+    opacity: 0.155;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+.placeholderGlow {
+  animation: placeholder-glow 2.22s ease-in-out infinite alternate;
+}
+
+.overflow-hidden #lgytlqbycau {
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=global.css.map */
