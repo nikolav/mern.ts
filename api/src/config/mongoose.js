@@ -28,7 +28,6 @@ exports.connect = () => {
       //
       // //@@ decalre global config
       // autoIndex: false,
-      timestamps: true,
       // minimize: false,
       // strict: true,
       // validateBeforeSave: false,
