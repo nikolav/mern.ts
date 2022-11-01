@@ -12,8 +12,8 @@ const ContextBrowser = createContext<any>(null)
 export const useBrowser = () => useContext(ContextBrowser)
 
 export const BrowserContextProvider = ({ children }: PropsWithChildren) => {
-  const [w$, setw] = useState(null)
-  const [d$, setd] = useState(null)
+  const [w$, setw] = useState()
+  const [d$, setd] = useState()
   const [m$, setm] = useState(false)
   const [r$, setr] = useState(false)
 
