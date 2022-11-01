@@ -15,8 +15,8 @@ describe("@useAuthApi", () => {
         <QueryProvider>
           <AuthApiProvider>
             <TestUseAuthApi
-              onUser={(res: any) => {
-                expect(res).toBe(true)
+              onUser={(isAuth: any) => {
+                expect(isAuth).toBe(true)
                 done()
               }}
             />

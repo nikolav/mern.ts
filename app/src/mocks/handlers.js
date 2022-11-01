@@ -6,9 +6,8 @@ export const handlers = [
     res(ctx.status(200), ctx.json({ status: "ok" }))
   ),
 
-  // rest.post("/v1/auth/login", (req, res, ctx) => {
-  rest.post("http://localhost:3001/v1/auth/login", (req, res, ctx) => {
-    return res(
+  rest.post("http://localhost:3001/v1/auth/login", (req, res, ctx) =>
+    res(
       ctx.status(200),
       ctx.json({
         token: {
@@ -25,17 +24,13 @@ export const handlers = [
           createdAt: "2022-11-01T08:38:05.015Z",
         },
       })
-    )
-  }),
+    )),
 
-  // rest.post('/v1/mail/text-message', (req, res, ctx) => {
-  rest.post("http://localhost:3001/v1/mail/text-message", (req, res, ctx) => {
-    return res(ctx.status(201), ctx.json({ messageId: "test" }))
-  }),
+  rest.post("http://localhost:3001/v1/mail/text-message", (req, res, ctx) =>
+    res(ctx.status(201), ctx.json({ messageId: "test" }))),
 
-  rest.post("http://localhost:3001/v1/session/122333", (req, res, ctx) => {
-    return res(ctx.json({ test: "test" }))
-  }),
+  rest.post("http://localhost:3001/v1/session/122333", (req, res, ctx) =>
+    res(ctx.json({ test: "test" }))),
 
   // rest.get("/user", (req, res, ctx) => {
   //   // Check if the user is authenticated in this session

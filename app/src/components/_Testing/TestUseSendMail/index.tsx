@@ -28,8 +28,8 @@ const TestUseSendMail = ({ onMail }: IMailedCallback) => {
     }
   }, [isAuth])
   useEffect(() => {
-    if (id) onMail(id)
-  }, [id])
+    if (id && !error && !loading) onMail(id)
+  }, [id, error, loading])
   return <h1>TestUseSendMail</h1>
 }
 
