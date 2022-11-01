@@ -5,7 +5,7 @@ const Promise = require('bluebird');
 // https://www.npmjs.com/package/html-pdf-node
 const htmlToPdfBuffer = (
   inlinedHtml,
-  args = ['--no-sandbox', '--disable-setuid-sandbox'],
+  args = ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'],
   options = {
     format: 'Letter', // Letter|A4..
     // printBackground: false,
@@ -15,7 +15,7 @@ const htmlToPdfBuffer = (
 ) =>
   new Promise(async (resolve, reject) => {
     try {
-      const browser = await puppeteer.launch({ args });
+      const browser = await puppeteer.launch({ args, headless: true });
       const page = await browser.newPage();
 
       await page.setContent(inlinedHtml, { waitUntil: 'networkidle0' });

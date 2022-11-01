@@ -1,12 +1,13 @@
-import { ReactNode } from "react"
+import { PropsWithChildren, ReactNode, FC } from "react"
 import { useLocation, Routes } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { useBodyOverflow } from "../../hooks"
-//
-export interface Props {
-  children?: ReactNode
-}
-export const RouteTransition = ({ children }: Props) => {
+
+type TPropsChildren = { children: ReactNode }
+type TRouteTransition = TPropsChildren
+type TAnimatedRoutes = TPropsChildren
+
+export const RouteTransition = ({ children }: TRouteTransition) => {
   const overflow = useBodyOverflow()
   //
   return (
@@ -37,7 +38,7 @@ export const RouteTransition = ({ children }: Props) => {
   )
 }
 
-export const AnimatedRoutes = ({ children }: Props) => {
+export const AnimatedRoutes = ({ children }: TAnimatedRoutes) => {
   const location = useLocation()
   return (
     <AnimatePresence initial={false}>

@@ -1,26 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useEffect } from "react"
 import Button from "@mui/material/Button"
-import { useResourceMain, useApollo } from "../../../hooks/queries"
-import { gql } from "@apollo/client"
 
-import { useAuthApi, useHandleForm } from "../../../hooks"
+import { useAuthApi, useHandleForm, useSavePdf } from "../../../hooks"
 import { useIO } from "../../store"
 
 export const PageHome = () => {
-  const { resource } = useResourceMain()
   const { error, processing, user, authenticate, logout, session } =
     useAuthApi()
-  const { data } = useApollo(
-    gql`
-      query {
-        messages {
-          id
-          content
-        }
-      }
-    `
-  )
   const socket = useIO()
   useEffect(() => {
     socket && socket.on("status:test", (m) => console.log(m))
@@ -36,9 +23,24 @@ export const PageHome = () => {
       },
     }
   )
+  const { error: pdfError, loading: pdfLoading, savePdf } = useSavePdf()
 
   return (
     <section>
+      <button
+        className="button"
+        onClick={() =>
+          savePdf({
+            template: "test-doc",
+            locals: {
+              title: "title --keproscivfd",
+              description: "description --mhsjtuiiwhl",
+            },
+          })
+        }
+      >
+        pdf
+      </button>
       <form onSubmit={handle} noValidate>
         <input
           type="text"
@@ -71,10 +73,9 @@ export const PageHome = () => {
       <button className="button" onClick={logout}>
         logout
       </button>
+      <pre>{JSON.stringify({ pdfError, pdfLoading }, null, 2)};</pre>
       <pre>{JSON.stringify({ error, processing }, null, 2)};</pre>
       <pre>{JSON.stringify({ user, session }, null, 2)};</pre>
-      <pre>{JSON.stringify({ resource }, null, 2)};</pre>
-      <pre>{JSON.stringify({ data }, null, 2)};</pre>
       <h2>@PageHome</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A eum repellat
