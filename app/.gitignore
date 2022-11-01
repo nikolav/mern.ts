@@ -235,6 +235,8 @@ restapi--express/storage
 # wp
 **/wpimages/**/*
 **/wpscripts/**/*
+!**/test-doc/wpimages/**/*
+!**/test-doc/wpscripts/**/*
 !**/wpscripts/wpstyles.css
 !**/docs/wpimages/**/*
 !**/docs/wpscripts/**/*
