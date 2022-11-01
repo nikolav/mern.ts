@@ -11,8 +11,7 @@ const API_URL_production = "http://80.240.17.71:8081/v1"
 const FILE_DOWNLOAD_URL_production = "http://80.240.17.71:8081/v1/download"
 const FILE_UPLOAD_URL_production = "http://80.240.17.71:8081/v1/upload"
 const IO_production = "http://80.240.17.71:8081/"
-const PDF_DOWNLOAD_URI_production =
-  "http://80.240.17.71:8081/v1/download/pdf"
+const PDF_DOWNLOAD_URI_production = "http://80.240.17.71:8081/v1/download/pdf"
 const SEND_MAIL_URL_production = "http://80.240.17.71:8081/v1/mail"
 
 // @@DEV
@@ -30,17 +29,17 @@ const SEND_MAIL_URL_production = "http://80.240.17.71:8081/v1/mail"
 // const SEND_MAIL_URL = SEND_MAIL_URL_dev
 
 // @@PRODUCTION
-const API_GRAPHQL = API_GRAPHQL_production;
-const API_URL = API_URL_production;
-const AUTH_API_URL = "http://80.240.17.71:8081/v1/auth/login";
-const AUTH_API_URL_logout = "http://80.240.17.71:8081/v1/session";
-const AUTH_API_URL_register = "http://80.240.17.71:8081/v1/auth/register";
-const AUTH_API_URL_session = "http://80.240.17.71:8081/v1/session";
-const AUTH_API_URL_users = "http://80.240.17.71:8081/v1/users";
-const FILE_DOWNLOAD_URL = FILE_DOWNLOAD_URL_production;
-const FILE_UPLOAD_URL = FILE_UPLOAD_URL_production;
-const IO_SERVER = IO_production;
-const PDF_DOWNLOAD_URI = PDF_DOWNLOAD_URI_production;
+const API_GRAPHQL = API_GRAPHQL_production
+const API_URL = API_URL_production
+const AUTH_API_URL = "http://80.240.17.71:8081/v1/auth/login"
+const AUTH_API_URL_logout = "http://80.240.17.71:8081/v1/session"
+const AUTH_API_URL_register = "http://80.240.17.71:8081/v1/auth/register"
+const AUTH_API_URL_session = "http://80.240.17.71:8081/v1/session"
+const AUTH_API_URL_users = "http://80.240.17.71:8081/v1/users"
+const FILE_DOWNLOAD_URL = FILE_DOWNLOAD_URL_production
+const FILE_UPLOAD_URL = FILE_UPLOAD_URL_production
+const IO_SERVER = IO_production
+const PDF_DOWNLOAD_URI = PDF_DOWNLOAD_URI_production
 const SEND_MAIL_URL = SEND_MAIL_URL_production
 
 const AUTH_SESSION_TOKEN = "drhhmxbdpkf"
