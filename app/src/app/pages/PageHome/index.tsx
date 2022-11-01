@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import Button from "@mui/material/Button"
 
-import { useAuthApi, useHandleForm, useSavePdf } from "../../../hooks"
+import { useAuthApi, useHandleForm, useSendMail } from "../../../hooks"
 import { useIO } from "../../store"
 
 export const PageHome = () => {
@@ -23,23 +23,26 @@ export const PageHome = () => {
       },
     }
   )
-  const { error: pdfError, loading: pdfLoading, savePdf } = useSavePdf()
+  const {
+    error: mailError,
+    loading: mailLoading,
+    id: mailId,
+    sendMail,
+  } = useSendMail()
 
   return (
     <section>
       <button
         className="button"
         onClick={() =>
-          savePdf({
-            template: "test-doc",
-            locals: {
-              title: "title --keproscivfd",
-              description: "description --mhsjtuiiwhl",
-            },
+          sendMail({
+            to: "admin@nikolav.rs",
+            subject: "subject --3",
+            message: "message --3",
           })
         }
       >
-        pdf
+        mail
       </button>
       <form onSubmit={handle} noValidate>
         <input
@@ -73,7 +76,7 @@ export const PageHome = () => {
       <button className="button" onClick={logout}>
         logout
       </button>
-      <pre>{JSON.stringify({ pdfError, pdfLoading }, null, 2)};</pre>
+      <pre>{JSON.stringify({ mailError, mailLoading, mailId }, null, 2)};</pre>
       <pre>{JSON.stringify({ error, processing }, null, 2)};</pre>
       <pre>{JSON.stringify({ user, session }, null, 2)};</pre>
       <h2>@PageHome</h2>
