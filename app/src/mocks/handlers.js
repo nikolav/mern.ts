@@ -2,20 +2,40 @@
 import { rest } from "msw"
 
 export const handlers = [
-  rest.get("/msw-test", (req, res, ctx) =>
+  rest.get("http://localhost:3001/msw-test", (req, res, ctx) =>
     res(ctx.status(200), ctx.json({ status: "ok" }))
   ),
 
-  // rest.post("/login", (req, res, ctx) => {
-  //   // Persist user's authentication in the session
-  //   // eslint-disable-next-line no-undef
-  //   sessionStorage.setItem("is-authenticated", "true")
+  // rest.post("/v1/auth/login", (req, res, ctx) => {
+  rest.post("http://localhost:3001/v1/auth/login", (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        token: {
+          tokenType: "Bearer",
+          expiresIn: "2022-11-08T12:51:46.294Z",
+          accessToken: "test",
+          sessionToken: "test",
+          refreshToken: "test",
+        },
+        user: {
+          id: "122333",
+          email: "admin@nikolav.rs",
+          role: "user",
+          createdAt: "2022-11-01T08:38:05.015Z",
+        },
+      })
+    )
+  }),
 
-  //   return res(
-  //     // Respond with a 200 status code
-  //     ctx.status(200)
-  //   )
-  // }),
+  // rest.post('/v1/mail/text-message', (req, res, ctx) => {
+  rest.post("http://localhost:3001/v1/mail/text-message", (req, res, ctx) => {
+    return res(ctx.status(201), ctx.json({ messageId: "test" }))
+  }),
+
+  rest.post("http://localhost:3001/v1/session/122333", (req, res, ctx) => {
+    return res(ctx.json({ test: "test" }))
+  }),
 
   // rest.get("/user", (req, res, ctx) => {
   //   // Check if the user is authenticated in this session

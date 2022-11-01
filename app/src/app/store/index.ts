@@ -15,32 +15,32 @@ const PDF_DOWNLOAD_URI_production = "http://80.240.17.71:8081/v1/download/pdf"
 const SEND_MAIL_URL_production = "http://80.240.17.71:8081/v1/mail"
 
 // @@DEV
-// const API_GRAPHQL = API_GRAPHQL_dev
-// const API_URL = API_URL_dev
-// const AUTH_API_URL = "http://localhost:3001/v1/auth/login"
-// const AUTH_API_URL_logout = "http://localhost:3001/v1/session"
-// const AUTH_API_URL_register = "http://localhost:3001/v1/auth/register"
-// const AUTH_API_URL_session = "http://localhost:3001/v1/session"
-// const AUTH_API_URL_users = "http://localhost:3001/v1/users"
-// const FILE_DOWNLOAD_URL = FILE_DOWNLOAD_URL_dev
-// const FILE_UPLOAD_URL = FILE_UPLOAD_URL_dev
-// const IO_SERVER = IO_dev
-// const PDF_DOWNLOAD_URI = PDF_DOWNLOAD_URI_dev
-// const SEND_MAIL_URL = SEND_MAIL_URL_dev
+const API_GRAPHQL = API_GRAPHQL_dev
+const API_URL = API_URL_dev
+const AUTH_API_URL = "http://localhost:3001/v1/auth/login"
+const AUTH_API_URL_logout = "http://localhost:3001/v1/session"
+const AUTH_API_URL_register = "http://localhost:3001/v1/auth/register"
+const AUTH_API_URL_session = "http://localhost:3001/v1/session"
+const AUTH_API_URL_users = "http://localhost:3001/v1/users"
+const FILE_DOWNLOAD_URL = FILE_DOWNLOAD_URL_dev
+const FILE_UPLOAD_URL = FILE_UPLOAD_URL_dev
+const IO_SERVER = IO_dev
+const PDF_DOWNLOAD_URI = PDF_DOWNLOAD_URI_dev
+const SEND_MAIL_URL = SEND_MAIL_URL_dev
 
 // @@PRODUCTION
-const API_GRAPHQL = API_GRAPHQL_production
-const API_URL = API_URL_production
-const AUTH_API_URL = "http://80.240.17.71:8081/v1/auth/login"
-const AUTH_API_URL_logout = "http://80.240.17.71:8081/v1/session"
-const AUTH_API_URL_register = "http://80.240.17.71:8081/v1/auth/register"
-const AUTH_API_URL_session = "http://80.240.17.71:8081/v1/session"
-const AUTH_API_URL_users = "http://80.240.17.71:8081/v1/users"
-const FILE_DOWNLOAD_URL = FILE_DOWNLOAD_URL_production
-const FILE_UPLOAD_URL = FILE_UPLOAD_URL_production
-const IO_SERVER = IO_production
-const PDF_DOWNLOAD_URI = PDF_DOWNLOAD_URI_production
-const SEND_MAIL_URL = SEND_MAIL_URL_production
+// const API_GRAPHQL = API_GRAPHQL_production
+// const API_URL = API_URL_production
+// const AUTH_API_URL = "http://80.240.17.71:8081/v1/auth/login"
+// const AUTH_API_URL_logout = "http://80.240.17.71:8081/v1/session"
+// const AUTH_API_URL_register = "http://80.240.17.71:8081/v1/auth/register"
+// const AUTH_API_URL_session = "http://80.240.17.71:8081/v1/session"
+// const AUTH_API_URL_users = "http://80.240.17.71:8081/v1/users"
+// const FILE_DOWNLOAD_URL = FILE_DOWNLOAD_URL_production
+// const FILE_UPLOAD_URL = FILE_UPLOAD_URL_production
+// const IO_SERVER = IO_production
+// const PDF_DOWNLOAD_URI = PDF_DOWNLOAD_URI_production
+// const SEND_MAIL_URL = SEND_MAIL_URL_production
 
 const AUTH_SESSION_TOKEN = "drhhmxbdpkf"
 

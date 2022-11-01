@@ -30,7 +30,7 @@ const queryFnSessionData: QueryFunction = async ({ queryKey }) => {
       sessionData = data
     }
   } catch (error) {
-    console.error({ error })
+    // console.error({ error })
   }
 
   return sessionData

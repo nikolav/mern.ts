@@ -15,9 +15,31 @@ describe("@boots", () => {
   })
   // @@
   it("@fake-api msw online", async () => {
-    const res = await axios("/msw-test")
-    expect(res.status).toBe(200)
-    expect(res.data.status).toBe("ok")
+    const res1 = await axios("http://localhost:3001/msw-test")
+    const res2 = await axios({
+      method: "post",
+      url: "http://localhost:3001/v1/auth/login",
+    })
+    const res3 = await axios({
+      method: "post",
+      url: "http://localhost:3001/v1/mail/text-message",
+    })
+    const res4 = await axios({
+      method: "post",
+      url: "http://localhost:3001/v1/session/122333",
+    })
+
+    //
+    expect(res1.status).toBe(200)
+    expect(res1.data.status).toBe("ok")
+
+    expect(res2.status).toBe(200)
+    expect(res2.data).toHaveProperty("token")
+    expect(res2.data).toHaveProperty("user")
+
+    expect(res3.status).toBe(201)
+
+    expect(res4.status).toBe(200)
   })
   // @@
   it("@ui-tests init", () => {
