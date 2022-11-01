@@ -1,4 +1,4 @@
-export * from "./vars";
+export * from "./vars"
 export { useAppData } from "./appdata"
 export { useIO } from "../providers"
 export { useColorModeTW, MODE_DARK } from "./color-mode-tw"

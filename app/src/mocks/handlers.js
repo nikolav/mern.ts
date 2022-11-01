@@ -24,13 +24,16 @@ export const handlers = [
           createdAt: "2022-11-01T08:38:05.015Z",
         },
       })
-    )),
+    )
+  ),
 
   rest.post("http://localhost:3001/v1/mail/text-message", (req, res, ctx) =>
-    res(ctx.status(201), ctx.json({ messageId: "test" }))),
+    res(ctx.status(201), ctx.json({ messageId: "test" }))
+  ),
 
   rest.post("http://localhost:3001/v1/session/122333", (req, res, ctx) =>
-    res(ctx.json({ test: "test" }))),
+    res(ctx.json({ test: "test" }))
+  ),
 
   // rest.get("/user", (req, res, ctx) => {
   //   // Check if the user is authenticated in this session

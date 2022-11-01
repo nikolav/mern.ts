@@ -1,7 +1,8 @@
-// src/setupTests.js
-import { server } from "./mocks/server.js"
-import matchers from "@testing-library/jest-dom/matchers"
+import "@testing-library/jest-dom"
+import "whatwg-fetch"
 import { expect } from "vitest"
+import matchers from "@testing-library/jest-dom/matchers"
+import { server } from "./mocks/server.js"
 
 expect.extend(matchers)
 

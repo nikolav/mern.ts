@@ -1,4 +1,3 @@
-
 // globals.*
 export const AUTH_SESSION_TOKEN = "drhhmxbdpkf"
 export const REST_RESOURCE_main = "variables"
