@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import Button from "@mui/material/Button"
 
-import { useAuthApi, useHandleForm, useFileDownload } from "../../../hooks"
+import { useAuthApi, useHandleForm, useSavePdf } from "../../../hooks"
 import { useIO } from "../../store"
 
 export const PageHome = () => {
@@ -23,10 +23,23 @@ export const PageHome = () => {
       },
     }
   )
-  const { error: dlError, loading: dlLoading, download } = useFileDownload()
+  const { error: pdfError, loading: pdfLoading, savePdf } = useSavePdf()
+
   return (
     <section>
-      <button className="button" onClick={() => download("r7i9vdu")}>
+      <button
+        className="button"
+        onClick={() =>
+          savePdf({
+            template: "test-doc",
+            locals: {
+              title: "title --user-nikolav",
+              description: `description --${Date.now()}`,
+            },
+            filename: "info.pdf",
+          })
+        }
+      >
         dl
       </button>
       <form onSubmit={handle} noValidate>
@@ -61,7 +74,6 @@ export const PageHome = () => {
       <button className="button" onClick={logout}>
         logout
       </button>
-      <pre>{JSON.stringify({ dlError, dlLoading }, null, 2)};</pre>
       <pre>{JSON.stringify({ error, processing }, null, 2)};</pre>
       <pre>{JSON.stringify({ user, session }, null, 2)};</pre>
       <h2>@PageHome</h2>
