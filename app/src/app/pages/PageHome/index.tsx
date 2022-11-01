@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import Button from "@mui/material/Button"
 
-import { useAuthApi, useHandleForm, useSendMail } from "../../../hooks"
+import { useAuthApi, useHandleForm, useFileDownload } from "../../../hooks"
 import { useIO } from "../../store"
 
 export const PageHome = () => {
@@ -23,26 +23,11 @@ export const PageHome = () => {
       },
     }
   )
-  const {
-    error: mailError,
-    loading: mailLoading,
-    id: mailId,
-    sendMail,
-  } = useSendMail()
-
+  const { error: dlError, loading: dlLoading, download } = useFileDownload()
   return (
     <section>
-      <button
-        className="button"
-        onClick={() =>
-          sendMail({
-            to: "admin@nikolav.rs",
-            subject: "subject --3",
-            message: "message --3",
-          })
-        }
-      >
-        mail
+      <button className="button" onClick={() => download("r7i9vdu")}>
+        dl
       </button>
       <form onSubmit={handle} noValidate>
         <input
@@ -76,7 +61,7 @@ export const PageHome = () => {
       <button className="button" onClick={logout}>
         logout
       </button>
-      <pre>{JSON.stringify({ mailError, mailLoading, mailId }, null, 2)};</pre>
+      <pre>{JSON.stringify({ dlError, dlLoading }, null, 2)};</pre>
       <pre>{JSON.stringify({ error, processing }, null, 2)};</pre>
       <pre>{JSON.stringify({ user, session }, null, 2)};</pre>
       <h2>@PageHome</h2>

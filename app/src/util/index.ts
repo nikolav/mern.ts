@@ -37,3 +37,4 @@ export {
 export * from "./has-own"
 export * from "./strip-end-slashes"
 export * from "./prevent"
+export * from "./unpack-blob"
