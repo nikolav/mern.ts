@@ -49,6 +49,7 @@ module.exports = {
     defaultFrom: process.env.EMAIL_DEFAULT_FROM,
     defaultTo: process.env.EMAIL_DEFAULT_TO,
   },
+  adminEmail: process.env.ADMIN_EMAIL,
 
   // @misc. config defaults
   defaultPdfTemplate: 'test-doc',

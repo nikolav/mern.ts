@@ -28,8 +28,8 @@ transporter.verify((error) => {
 });
 
 exports.sendMail = ({
-  message = {},
   template = 'text-message/index.html',
+  message = {},
   locals = {},
 }) =>
   // eslint-disable-next-line no-unused-vars
