@@ -71,7 +71,7 @@ export const useSendMail = () => {
           Authorization: `Bearer ${AT}`,
         },
       })
-      if (messageId) id = messageId
+      id = messageId
     } catch (error) {
       setError(error)
     } finally {

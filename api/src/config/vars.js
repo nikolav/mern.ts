@@ -13,6 +13,7 @@ module.exports = {
   // @env
   env: process.env.NODE_ENV,
   port: process.env.PORT,
+  runScheduler: false,
 
   // @logs
   LOGS_PATH: path.join(__dirname, '../../logs'),

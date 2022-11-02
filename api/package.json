@@ -52,6 +52,7 @@
     "compression": "^1.6.2",
     "config": "^3.3.8",
     "cors": "^2.8.3",
+    "cron": "^2.1.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.2",
     "dotenv-cli": "^6.0.0",

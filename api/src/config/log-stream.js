@@ -5,7 +5,7 @@ const { ACCESS_LOG, LOGS_PATH } = require('../config/vars');
 module.exports = (logPath = ACCESS_LOG) => {
   const stream = fs.createWriteStream(
     path.join(
-      // __dirname, 
+      // __dirname,
       LOGS_PATH,
       logPath
     ),

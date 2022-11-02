@@ -52,11 +52,7 @@ export const useAppData = () => {
   const client = assign((name: string) => appdata[name], {
     clear: (name: string, EMPTY = null) =>
       dispatch(clearAppDataEntry({ name, EMPTY })),
-
-    has: (name: string) => has(appdata, name),
-
     ls: () => Object.keys(appdata),
-
     rm: (name: string) => dispatch(removeAppData(name)),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     set: (name: string, value: any) => dispatch(setAppData({ name, value })),

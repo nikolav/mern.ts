@@ -1,21 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { assign, identity, has, transform } from "../util"
 import { useReducer, useState } from "react"
+import { assign, identity, has, transform } from "../util"
+import { CallbackAny } from "../util/type"
 
 export const STATE_PUT = "state:put"
 export const STATE_CLEAR = "state:clear"
-type Callback = {
-  // eslint-disable-next-line no-unused-vars
-  (...args: any[]): any
-}
-export type TStateReducerClient = {
+type Callback = CallbackAny
+export type TStateReducerClient<T = any> = {
   put: Callback
   clear: Callback
   $pre: Callback
   $computed: Callback
   $rules: Callback
+  (...args: any[]): T
 }
-export const useStateReducer = (initialValue = {}) => {
+export const useStateReducer = <T = any>(initialValue = {}) => {
   const [m$, setm] = useState({ pre: identity, format: identity })
   const [r$, setr] = useState({})
 
@@ -42,8 +41,7 @@ export const useStateReducer = (initialValue = {}) => {
     },
     initialValue
   )
-  const client = () => m$.format(state)
-  assign(client, {
+  const client: TStateReducerClient<T> = assign(() => m$.format(state), {
     put: (callback: Callback) => {
       dispatch({ type: STATE_PUT, payload: callback(state) })
     },
