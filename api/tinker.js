@@ -1,7 +1,7 @@
 // const fs = require('fs');
 // const path = require('path');
 // const resolverMiddlewares = require('./src/utils/resolver-middlewares');
-const logger = require('./src/config/logger');
+// const logger = require('./src/config/logger');
 // const mailer = require('./src/services/emails/emailProvider');
 // const inlineTemplate = require('./src/utils/inline-template');
 // const htmlToBufferPdf = require('./src/services/pdf/html-to-buffer-pdf');
@@ -20,7 +20,6 @@ const logger = require('./src/config/logger');
 // 
 const config = require('./src/config/vars');
 ; (async () => {
-  console.log(config);
   // db.connect();
   // const { Tokens } = await model;
   // const tok = await Tokens.findAll({ raw: true })
@@ -83,6 +82,20 @@ const config = require('./src/config/vars');
 
   // const b = Buffer.from([65]);
   // createWriteStream(path.join(__dirname, 'out')).write(b);
+
+
+const { program } = require('commander');
+
+program
+  .option('--first')
+  .option('-s, --separator <char>');
+
+program.parse();
+
+const options = program.opts();
+// const limit = options.first ? 1 : undefined;
+// console.log(program.args[0].split(options.separator, limit));
+  console.log(['program.args[0]', program.args[0]]);
 
 
 })();

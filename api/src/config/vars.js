@@ -4,6 +4,7 @@ require('dotenv').config();
 //
 const isTestEnv = process.env.NODE_ENV === 'test';
 const isProductionEnv = process.env.NODE_ENV === 'production';
+const runScheduler = true;
 
 module.exports = {
   // @flags
@@ -13,7 +14,7 @@ module.exports = {
   // @env
   env: process.env.NODE_ENV,
   port: process.env.PORT,
-  runScheduler: false,
+  runScheduler,
 
   // @logs
   LOGS_PATH: path.join(__dirname, '../../logs'),

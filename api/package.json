@@ -41,7 +41,8 @@
     "db:seed:dev": "dotenv -e .env.dev -- node src/commands/db-seed ",
     "db:upsert:dev": "dotenv -e .env.dev -- node src/commands/db-upsert ",
     "db:seed:test": "dotenv -e .env.test -- node src/commands/db-seed ",
-    "db:upsert:test": "dotenv -e .env.test -- node src/commands/db-upsert "
+    "db:upsert:test": "dotenv -e .env.test -- node src/commands/db-upsert ",
+    "cmd": "dotenv -e .env.dev -- node ./src/commands/index.js "
   },
   "dependencies": {
     "@apollo/server": "^4.0.1",
@@ -96,6 +97,8 @@
     "apidoc": "^0.28.1",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
+    "chalk": "4.1.2",
+    "commander": "^9.4.1",
     "coveralls": "^3.0.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.0",

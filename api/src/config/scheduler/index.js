@@ -8,13 +8,5 @@ const { logDate, mailErrorLog } = require('./cron-jobs');
 const job1 = new CronJob(AT_MIDNIGHT, logDate);
 const job2 = new CronJob(AT_MIDNIGHT, mailErrorLog);
 
-// let date = new Date();
-// date.setSeconds(date.getSeconds() + 2);
-// const jobAtDate = new CronJob(date, function () {
-//   const d = new Date();
-//   console.log('Specific date:', date, ', onTick at:', d);
-// });
-
 job1.start();
 job2.start();
-// jobAtDate.start();
