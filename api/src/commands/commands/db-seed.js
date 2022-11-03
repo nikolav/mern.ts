@@ -1,5 +1,6 @@
 const model = require('../../models/sequelize');
 const { testId } = require('../../utils');
+const chalk = require('chalk');
 
 module.exports = (program) => {
   const dbCmd = program.command('db');
@@ -9,10 +10,11 @@ module.exports = (program) => {
     // eslint-disable-next-line no-unused-vars
     .action(async (args, command) => {
       const { Main } = await model;
-      const res = await Main.create({
+      await Main.create({
         name: `x --${testId()}`,
         value: testId(),
       });
-      console.log(res);
+      // 
+      console.log(chalk.green('database seeded'));
     });
 };

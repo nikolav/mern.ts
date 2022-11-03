@@ -7,6 +7,7 @@ import {
 } from "react"
 import jQuery from "jquery"
 
+type TJQ = { jQuery: any }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ContextBrowser = createContext<any>(null)
 export const useBrowser = () => useContext(ContextBrowser)
@@ -14,6 +15,7 @@ export const useBrowser = () => useContext(ContextBrowser)
 export const BrowserContextProvider = ({ children }: PropsWithChildren) => {
   const [w$, setw] = useState()
   const [d$, setd] = useState()
+  const [jq$, setjq] = useState<TJQ>({ jQuery: null })
   const [m$, setm] = useState(false)
   const [r$, setr] = useState(false)
 
@@ -29,7 +31,10 @@ export const BrowserContextProvider = ({ children }: PropsWithChildren) => {
   }, [])
   useEffect(() => {
     if (w$ && d$) {
-      jQuery(() => setr(true))
+      jQuery(() => {
+        setjq({ jQuery })
+        setr(true)
+      })
     }
   }, [w$, d$])
 
@@ -38,6 +43,7 @@ export const BrowserContextProvider = ({ children }: PropsWithChildren) => {
     isReady: r$,
     window: w$,
     document: d$,
+    jQuery: jq$.jQuery,
   }
   return (
     <ContextBrowser.Provider value={api}>{children}</ContextBrowser.Provider>

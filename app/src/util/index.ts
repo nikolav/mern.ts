@@ -6,8 +6,10 @@ import identity from "lodash/identity"
 import isArray from "lodash/isArray"
 import isFunction from "lodash/isFunction"
 import isString from "lodash/isString"
+import keys from "lodash/keys"
 import merge from "lodash/merge"
 import noop from "lodash/noop"
+import now from "lodash/now"
 import omit from "lodash/omit"
 import pick from "lodash/pick"
 import pickBy from "lodash/pickBy"
@@ -26,8 +28,10 @@ export {
   isArray,
   isFunction,
   isString,
+  keys,
   merge,
   noop,
+  now,
   omit,
   pick,
   pickBy,
@@ -35,6 +39,8 @@ export {
   True,
 }
 export * from "./has-own"
-export * from "./strip-end-slashes"
+export * from "./id-gen"
 export * from "./prevent"
+export * from "./sort-by-timestamp-desc"
+export * from "./strip-end-slashes"
 export * from "./unpack-blob"

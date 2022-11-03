@@ -1442,6 +1442,10 @@ select {
   display: none;
 }
 
+.\!hidden {
+  display: none !important;
+}
+
 .items-center {
   align-items: center;
 }

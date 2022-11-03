@@ -2,7 +2,13 @@
 import { useEffect } from "react"
 import Button from "@mui/material/Button"
 
-import { useAuthApi, useHandleForm, useSavePdf } from "../../../hooks"
+import {
+  useAuthApi,
+  useHandleForm,
+  useSavePdf,
+  useBrowser,
+  useSocialLike,
+} from "../../../hooks"
 import { useIO } from "../../store"
 
 export const PageHome = () => {
@@ -24,9 +30,15 @@ export const PageHome = () => {
     }
   )
   const { error: pdfError, loading: pdfLoading, savePdf } = useSavePdf()
-
+  const { jQuery: $ } = useBrowser()
+  const { like, likeCount, isLiked } = useSocialLike("@app--154")
+  //
   return (
     <section>
+      <button className="button" onClick={like}>
+        {isLiked() ? "👎🏼" : "👍🏼"} [{likeCount}]
+      </button>
+      <button onClick={() => console.log($("body *"))}>ok</button>
       <button
         className="button"
         onClick={() =>

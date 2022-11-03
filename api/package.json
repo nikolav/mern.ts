@@ -36,11 +36,8 @@
     "precommit": "yarn lint",
     "validate": "yarn lint && yarn test",
     "tinker": "dotenv -e .env.dev -- node ./tinker.js ",
-    "db:seed": "dotenv -e .env -- node src/commands/commands/db-seed ",
     "db:upsert": "dotenv -e .env -- node src/commands/db-upsert ",
-    "db:seed:dev": "dotenv -e .env.dev -- node src/commands/commands/db-seed ",
     "db:upsert:dev": "dotenv -e .env.dev -- node src/commands/db-upsert ",
-    "db:seed:test": "dotenv -e .env.test -- node src/commands/commands/db-seed ",
     "db:upsert:test": "dotenv -e .env.test -- node src/commands/db-upsert ",
     "cmd": "dotenv -e .env.dev -- node ./src/commands/index.js "
   },
