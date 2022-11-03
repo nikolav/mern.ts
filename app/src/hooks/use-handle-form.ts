@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react"
-import { noop, prevent, pickBy, True } from "../util"
+import { noop, prevent, pickBy, True, keys, boolProps } from "../util"
+import { OptionsFlags } from "../util/type"
 
 type KVPairs = { [key: string]: string }
+type KVPairFlags = OptionsFlags<KVPairs>
 type TValidationRules = {
   [key: string]: (fieldValue: string) => boolean
 }
@@ -31,29 +33,28 @@ export const useHandleForm = (
     ...formHandlers,
   }
 
-  const fields = Object.keys(validation)
+  const fields = keys(validation)
   const initialValues = blankInitialValues_()
-  //
+
   const [ok, setOk] = useState<boolean>()
   const [inputs, setInput] = useState(initialValues)
-  const [valid, setValid] = useState(initialValues)
-  //
+  const [valid, setValid] = useState(boolProps(initialValues))
+
   const setInput_ = (name: string, value: string) => {
-    setInput((inputs = []) => ({ ...inputs, [name]: value }))
+    setInput((inputs: KVPairs) => ({ ...inputs, [name]: value }))
   }
-  //
-  // event{}
+
   const sync = ({ target }: React.FormEvent<HTMLInputElement>) =>
     setInput_(
       (target as HTMLInputElement).name,
       (target as HTMLInputElement).value
     )
-  //
+
   useEffect(() => {
     setValid(fields.reduce(validateFields_, {}))
     setOk(fields.every(validate_))
   }, [inputs])
-  //
+
   return {
     //
     // handle .onChange: Function
@@ -82,16 +83,16 @@ export const useHandleForm = (
     //
     reset: reset_,
   }
-  //
+
   function setInputTrimmed_() {
     setInput(
-      fields.reduce((v: any, field: string) => {
+      fields.reduce((v: KVPairs, field: string) => {
         v[field] = inputs[field].trim()
         return v
       }, {})
     )
   }
-  function validateFields_(v: any, field: string) {
+  function validateFields_(v: KVPairFlags, field: string) {
     v[field] = validate_(field)
     return v
   }
@@ -99,7 +100,7 @@ export const useHandleForm = (
     return validation[field](inputs[field])
   }
   function blankInitialValues_() {
-    return fields.reduce((v: any, name: string) => {
+    return fields.reduce((v: KVPairs, name: string) => {
       v[name] = ""
       return v
     }, {})

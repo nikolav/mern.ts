@@ -9,7 +9,6 @@
     "lint": "eslint ./src",
     "test": "vitest ",
     "test:1": "vitest run ",
-    "test:coverage": "yarn run test:1 && yarn run coverage ",
     "test:ui": "vitest --ui ",
     "coverage": "vitest run --coverage ",
     "format": "yarn prettier --write src ",

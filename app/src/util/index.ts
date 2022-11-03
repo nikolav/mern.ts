@@ -38,6 +38,7 @@ export {
   transform,
   True,
 }
+export * from "./bool-props"
 export * from "./has-own"
 export * from "./id-gen"
 export * from "./prevent"
