@@ -1,6 +1,7 @@
 export { default as useBodyOverflow } from "./use-body-overflow"
 export { default as useSocialComments } from "./use-social-comments"
 export { default as useSocialLike } from "./use-social-like"
+export { default as useStateSwitch } from "./use-state-switch"
 export { useAuthApi } from "./use-auth-api"
 export { useBrowser } from "./use-browser"
 export { useEmitter } from "./use-emitter"
