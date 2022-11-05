@@ -19,7 +19,7 @@
 // const model = require('./src/models/sequelize')
 // 
 // const { hashSync } = require('bcryptjs')
-const { cached } = require('./src/config/caching')
+const { cached } = require('./src/utils')
   ; (async () => {
     // db.connect();
     // const { Tokens } = await model;
@@ -84,7 +84,7 @@ const { cached } = require('./src/config/caching')
     // const b = Buffer.from([65]);
     // createWriteStream(path.join(__dirname, 'out')).write(b);
 
-    const data = await cached({ key: "admin.url", data: () => "admin@nikolav.rs" })
+    const data = await cached({ key: "data.4" })
     console.log({ data })
 
   })();
