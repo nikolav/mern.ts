@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-global-assign
-const http = require('http');
 Promise = require('bluebird');
+const http = require('http');
 
 const { port, env, runScheduler } = require('./config/vars');
 const app = require('./config/express');

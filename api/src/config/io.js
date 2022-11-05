@@ -19,7 +19,7 @@ module.exports = {
     new Promise((resolve, reject) => {
       try {
         if (null != IO) return resolve(IO);
-        //
+
         IO = new IOServer(server, {
           cors: {
             origin: [CLIENT_IO],
@@ -34,15 +34,15 @@ module.exports = {
             socket.emit('status:test', payload)
           );
         });
-        //
+
         resolve(IO);
         ioEmitter.emit('io:online');
       } catch (error) {
         reject(error);
       }
-      //
+
       logger.http(`io.connection:${moment()}:${!!IO}`);
     }),
-  //
+
   useIO: (callback) => (IO ? callback(IO) : subs.push(callback)),
 };

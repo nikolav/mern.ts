@@ -18,7 +18,8 @@
 
 // const model = require('./src/models/sequelize')
 // 
-const config = require('./src/config/vars');
+const { hashSync } = require('bcryptjs')
+
 ; (async () => {
   // db.connect();
   // const { Tokens } = await model;
@@ -83,19 +84,6 @@ const config = require('./src/config/vars');
   // const b = Buffer.from([65]);
   // createWriteStream(path.join(__dirname, 'out')).write(b);
 
-
-const { program } = require('commander');
-
-program
-  .option('--first')
-  .option('-s, --separator <char>');
-
-program.parse();
-
-const options = program.opts();
-// const limit = options.first ? 1 : undefined;
-// console.log(program.args[0].split(options.separator, limit));
-  console.log(['program.args[0]', program.args[0]]);
-
+  console.log(hashSync('122333', 1))
 
 })();
