@@ -1,7 +1,7 @@
 const { CronJob } = require('cron');
 const { AT_MIDNIGHT } = require('./cron-time-formats');
-const { 
-  // logDate, 
+const {
+  // logDate,
   mailErrorLog,
 } = require('./cron-jobs');
 

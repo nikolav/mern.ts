@@ -1,10 +1,11 @@
-// import .env variables
 const path = require('path');
 require('dotenv').config();
-//
+const { boolean: parseBool } = require('boolean');
+
 const isTestEnv = process.env.NODE_ENV === 'test';
 const isProductionEnv = process.env.NODE_ENV === 'production';
-const runScheduler = true;
+const runScheduler = parseBool(process.env.SCHEDULER);
+const logDB = parseBool(process.env.LOG_DB);
 
 module.exports = {
   // @flags
@@ -15,6 +16,7 @@ module.exports = {
   env: process.env.NODE_ENV,
   port: process.env.PORT,
   runScheduler,
+  logDB,
 
   // @logs
   LOGS_PATH: path.join(__dirname, '../../logs'),

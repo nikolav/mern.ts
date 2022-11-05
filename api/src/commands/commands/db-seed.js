@@ -14,7 +14,7 @@ module.exports = (program) => {
         name: `x --${testId()}`,
         value: testId(),
       });
-      // 
+      //
       console.log(chalk.green('database seeded'));
     });
 };

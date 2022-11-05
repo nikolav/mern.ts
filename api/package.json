@@ -47,6 +47,7 @@
     "bcryptjs": "2.4.3",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.0",
+    "boolean": "^3.2.0",
     "compression": "^1.6.2",
     "config": "^3.3.8",
     "cors": "^2.8.3",
@@ -91,6 +92,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^18.11.9",
     "@types/sequelize": "^4.28.14",
     "apidoc": "^0.28.1",

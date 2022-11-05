@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const { pg, isProductionEnv } = require('./vars');
+const { pg, isProductionEnv, logDB } = require('./vars');
 const logger = require('./logger');
 
 module.exports = new Promise(async (resolve, reject) => {
@@ -7,7 +7,7 @@ module.exports = new Promise(async (resolve, reject) => {
   //
   try {
     connection = new Sequelize(pg, {
-      logging: isProductionEnv ? logger.debug.bind(logger) : true,
+      logging: isProductionEnv ? logger.info.bind(logger) : logDB,
     });
     // throw if no connection
     await connection.authenticate();
