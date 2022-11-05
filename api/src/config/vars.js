@@ -42,6 +42,13 @@ module.exports = {
       : process.env.MONGO_URI,
   },
   pg: process.env.POSTGRES_URI,
+  MAX_DBSEED_COUNT: parseInt(process.env.MAX_DBSEED_COUNT, 10),
+
+  // @redis
+  redis: {
+    url: process.env.REDIS_URL,
+    exiration: parseInt(process.env.REDIS_EXPIRATION, 10),
+  },
 
   // @mail
   emailConfig: {
