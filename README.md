@@ -6,13 +6,13 @@
 
 ## 2. copy redis.conf @/api
 
-## 3. declare ports @deploy-env.sh, line:39-41
+## 3. declare ports @deploy-env.sh, line:41-44
 
 ## 4. set api production address for client and api docs
-  - @/app/src/app/store/index.js, line:28-32
+  - @/app/src/app/store/vars.ts, line:45
   - @/api/apidoc.json, line:6
 
-## 5. allow io @/api/.env, line:41
+## 5. allow io @/api/.env, line:55
 
 ## 6. install sys
   `$ . ./deploy-env.sh`
