@@ -4,9 +4,15 @@ _.py
 !.env.example
 !.vscode/*.code-snippets
 !.vscode/extensions.json
+!.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
+!**/docs/wpimages/**/*
+!**/docs/wpscripts/**/*
+!**/test-doc/wpimages/**/*
+!**/test-doc/wpscripts/**/*
+!**/wpscripts/wpstyles.css
 .~lock.*#
 .cache
 .cache/
@@ -15,6 +21,7 @@ _.py
 .directory
 .dmypy.json
 .docusaurus
+.DS_Store
 .DS_Store
 .dynamodb/
 .eggs/
@@ -31,6 +38,7 @@ _.py
 .grunt
 .history/
 .hypothesis/
+.idea
 .idea
 .installed.cfg
 .ipynb_checkpoints
@@ -74,6 +82,7 @@ _.py
 .vercel
 .vscode-test
 .vscode/*
+.vscode/*
 .vuepress/dist
 .webassets-cache
 .yarn-integrity
@@ -92,6 +101,8 @@ _.py
 *.lcov
 *.lnk
 *.local
+*.local
+*.log
 *.log
 *.manifest
 *.mo
@@ -100,6 +111,8 @@ _.py
 *.msm
 *.msp
 *.njsproj
+*.njsproj
+*.ntvs*
 *.ntvs*
 *.pem
 *.pid
@@ -112,11 +125,15 @@ _.py
 *.scss.map
 *.seed
 *.sln
+*.sln
 *.so
 *.spec
 *.stackdump
 *.suo
+*.suo
 *.sw?
+*.sw?
+*.template.txt
 *.tgz
 *.tmp
 *.tsbuildinfo
@@ -124,6 +141,8 @@ _.py
 *.xlk
 **/supabase/.branches
 **/supabase/.temp
+**/wpimages/**/*
+**/wpscripts/**/*
 *~
 *$py.class
 *error.log
@@ -144,6 +163,9 @@ _.py
 /vendor/
 # docs
 # docs/_build/
+# Editor directories and files
+# Logs
+# wp
 ~$*.doc*
 ~$*.ppt*
 ~$*.xls*
@@ -167,6 +189,8 @@ db.sqlite3
 db.sqlite3-journal
 develop-eggs/
 dist
+dist
+dist-ssr
 dist-ssr
 dist/
 dmypy.json
@@ -177,6 +201,7 @@ ehthumbs.db
 env.bak/
 env/
 ENV/
+handle-upload.txt
 Homestead.json
 Homestead.yaml
 htmlcov/
@@ -185,17 +210,21 @@ ipython_config.py
 jspm_packages
 jspm_packages/
 lerna-debug.log*
+lerna-debug.log*
 lib-cov
 lib/
 lib64/
 local_settings.py
 logs
+logs
 MANIFEST
 next-env.d.ts
+node_modules
 node_modules
 node_modules/
 nosetests.xml
 npm-debug.log
+npm-debug.log*
 npm-debug.log*
 out
 out.pdf
@@ -205,12 +234,15 @@ pids
 pip-delete-this-directory.txt
 pip-log.txt
 pnpm-debug.log*
+pnpm-debug.log*
 profile_default/
 public_html/hot
 public_html/storage
 public/hot
 public/storage
+redis.conf
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+restapi--express/storage
 sdist/
 share/python-wheels/
 src/style/build.css
@@ -227,41 +259,7 @@ venv/
 web_modules/
 wheels/
 yarn-debug.log*
+yarn-debug.log*
 yarn-error.log
 yarn-error.log*
-handle-upload.txt
-*.template.txt
-restapi--express/storage
-# wp
-**/wpimages/**/*
-**/wpscripts/**/*
-!**/test-doc/wpimages/**/*
-!**/test-doc/wpscripts/**/*
-!**/wpscripts/wpstyles.css
-!**/docs/wpimages/**/*
-!**/docs/wpscripts/**/*
-
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?

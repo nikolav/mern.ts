@@ -48,6 +48,7 @@ module.exports = {
   redis: {
     url: process.env.REDIS_URL,
     exiration: parseInt(process.env.REDIS_EXPIRATION, 10),
+    password: process.env.REDIS_PASSWORD,
   },
 
   // @mail

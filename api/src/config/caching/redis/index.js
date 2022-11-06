@@ -11,6 +11,7 @@ module.exports = () =>
     try {
       client = createClient({
         url: redis.url,
+        password: redis.password,
       });
 
       if (!client) return reject(`no redis connection`);

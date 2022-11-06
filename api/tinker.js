@@ -84,7 +84,7 @@ const { cached } = require('./src/utils')
     // const b = Buffer.from([65]);
     // createWriteStream(path.join(__dirname, 'out')).write(b);
 
-    const data = await cached({ key: "data.4" })
+    const data = await cached({ key: "admin.email", data: () => "admin@nikolav.rs"})
     console.log({ data })
 
   })();
